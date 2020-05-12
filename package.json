@@ -1,0 +1,28 @@
+{
+  "name": "threemonkeys.github.io",
+  "version": "1.0.0",
+  "description": "A blog about our economy, our money and sustainable living.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/threemonkeys-io/threemonkeys.github.io.git"
+  },
+  "keywords": [
+    "economy",
+    "money",
+    "monetary",
+    "system",
+    "sustainability",
+    "climate",
+    "change"
+  ],
+  "author": "Jordan Rancie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/threemonkeys-io/threemonkeys.github.io/issues"
+  },
+  "homepage": "https://github.com/threemonkeys-io/threemonkeys.github.io#readme"
+}
