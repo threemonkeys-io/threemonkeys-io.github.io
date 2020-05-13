@@ -530,7 +530,7 @@
 
         /*==============================================
          Back to top init
-         ===============================================*/
+         
         $body.append("<a data-scroll class='lift-off js-lift-off lift-off_hide' href='#'><i class='fa fa-angle-up'></i></a>");
 
         var $liftOff = $(".js-lift-off");
@@ -541,7 +541,7 @@
                 $liftOff.addClass("lift-off_hide").removeClass("lift-off_show");
             }
         });
-
+        ===============================================*/
 
         /*==============================================
          Mailchip init
