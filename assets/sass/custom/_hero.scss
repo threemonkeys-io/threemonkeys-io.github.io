@@ -1,0 +1,75 @@
+/*------------------------------------------------------------------
+    My Hero
+-------------------------------------------------------------------*/
+.monkey-banner {
+    background-image: url("../img/banner/three-monkeys.jpg")!important;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+
+  .vertical-align .container-mid{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 200;
+  }
+  
+
+h1.main-heading {
+    font-size: 80px;
+    line-height: 70px;
+    color: #EEE;
+    text-shadow: 2px 2px 2px #000;
+}
+
+h3.main-summary {
+    font-size: 35px;
+    color: #EEE;
+    font-weight: 300;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.follow-button {
+    padding-left: 60px;
+    text-transform: none;
+    font-weight: 500;
+    position: relative;
+
+    .large-icon {
+        position: absolute;
+        font-size: 25px;
+        color: white;
+        transition: 0.3s;
+
+        position: absolute;
+        left: 20px;
+        top: 10px;        
+    }
+}
+
+.follow-button:hover {
+    background-color: white;
+    color: black;
+
+    .large-icon {
+        color: black;
+    }
+}
+
+.following {
+    color: #CCC;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 767px) {
+    .large-icon {
+        bottom: 19px;
+    }
+
+    h3.main-summary {
+        font-size: 25px!important;
+    }
+}

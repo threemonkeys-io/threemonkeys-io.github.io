@@ -1,0 +1,47 @@
+/*------------------------------------------------------------------
+    My Nav
+-------------------------------------------------------------------*/
+
+.nav-btn {
+    border: 1px solid #222;
+    border-radius: 3px;
+    line-height: 34px!important;
+    margin: 12px 2px!important;
+    transition: .3s!important;
+
+
+    &.register {
+        color: white!important;
+        background-color: #222!important;
+    }
+
+    &.login {
+        color: #222!important;
+        background-color: white!important;
+    }
+
+    @media screen and (max-width: 767px) {
+        border: none!important;
+    }
+}
+
+
+.login-icon {
+    border: 1px solid #222;
+    border-radius: 3px;
+    line-height: 34px!important;
+    margin: 12px 0!important;
+    background-color: #222!important;
+    color: white!important;
+    transition: .3s!important;
+}
+
+.nav-btn:hover {
+
+    background-color: #222!important;
+    color: white!important;   
+}
+
+li.nav-divider {
+    display: none!important;
+}

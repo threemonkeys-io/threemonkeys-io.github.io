@@ -1,0 +1,118 @@
+/*------------------------------------------------------------------
+    Blog listing
+-------------------------------------------------------------------*/
+
+.post-single {
+    display: flex;
+    height: 364px;
+
+
+    .post-img {
+        overflow: hidden;
+    }
+}
+
+
+.blog-list-item {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+    align-items: stretch;
+    
+    min-height: 360px;
+    max-width:1180px;
+    margin: auto;
+  }
+
+
+  .blog-image {
+    flex: 2;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    min-height: 360px;
+
+  }
+
+  .blog-text {
+    flex: 1;
+    min-width: 316px;
+    align-items: center;
+    padding: 24px 40px;
+    flex: 1 1 0;
+    justify-content: flex-start;
+
+    .title {
+        h2 {
+            font-size: 30px;
+            font-weight: 600;
+            //letter-spacing: 0px!important;
+            line-height: 1.2em;
+            letter-spacing: 0!important;
+            
+        }
+    }
+
+    .summary {
+        h3 {
+            font-size: 16px!important;
+            margin-bottom: 20px!important;
+            letter-spacing: 0!important;
+        }   
+    }
+
+    .author,.summary {
+        h4 {
+            font-size: 16px!important;
+            margin-bottom: 0!important;
+            font-weight: 600!important;
+            letter-spacing: 0!important;
+        }   
+    }
+    .author h4 {
+        color: #a94442;
+    }
+
+    .categories {
+        margin: 5px 0!important;
+        color: #222;
+        a {
+            color: #a94442;
+            font-weight: 600;
+        }
+    }
+
+    &.secondary {
+        background-color: #222;
+        h2,h3,h4 {
+            color: white;
+        }
+        h2 {
+            font-weight: 500!important;
+        }
+        h3,h4 {
+            font-weight: 300!important;
+        }
+        .categories {
+            color: white;
+            a {
+                color:#e95757;
+                font-weight: 400!important;
+            }
+        }
+        .author h4 {
+            color: #e95757;
+        }
+    
+    }
+
+}
+
+
+@media screen and (max-width:767px) {
+    .blog-list-item { flex-wrap: wrap;  }
+    .blog-image { flex-basis: 100%; }
+    
+  }

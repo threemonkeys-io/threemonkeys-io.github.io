@@ -16,6 +16,7 @@ var baseDir = "./assets/sass/base/";
 var layoutDir = "./assets/sass/layout/";
 var pagesDir = "./assets/sass/pages/";
 var themesDir = "./assets/sass/themes/";
+var customDir = "./assets/sass/custom/";
 var shrotcodesDir = "./assets/sass/shortcodes/";
 var styleCss = [baseDir+"*.scss", layoutDir+"*.scss", pagesDir+"*.scss"];
 
@@ -87,6 +88,7 @@ gulp.task("style", function() {
 gulp.task("watch", ["serve"], function() {
     gulp.watch(shrotcodesDir + "*.scss", ["shortcode"]);
     gulp.watch(themesDir + "*.scss", ["theme"]);
+    gulp.watch(customDir + "*.scss", ["style"]);
     gulp.watch(styleCss, ["style"]);
 
     gulp.watch("./*.html", browserSync.reload);
