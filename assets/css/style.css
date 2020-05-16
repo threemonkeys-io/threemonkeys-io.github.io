@@ -7169,7 +7169,7 @@ h3.main-summary {
             justify-content: flex-start;
 }
 .blog-text .title h2 {
-    margin-top: 25px !important; 
+    margin: 20px 0 !important; 
     letter-spacing: 0 !important;
     font-size: 30px;
     font-weight: 600;
@@ -7239,7 +7239,7 @@ h3.main-summary {
 /* styling text content */
 .content {
     padding-top: 37px;
-    padding-right: 30px;
+    padding-right: 40px;
     padding-left: 70px;
     letter-spacing: 1px;
     word-spacing: 5px;
