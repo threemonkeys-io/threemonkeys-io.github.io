@@ -622,4 +622,163 @@
     }
     */
 
+   const applicationServerPublicKey = 'BMRzWJycASmk8zIwe4_7yM9WaT8BbHr2Db52zHxDl4V2cXDIo5WOf1juJBgVJ-AyP5vWqfmo26FNOIKru-SJR8U';
+
+   const pushButton = document.querySelector('.follow-button');
+   const followText = '<i class="large-icon fas fa-bell"></i>FOLLOW US';
+   const unfollowText = '<i class="large-icon fas fa-bell"></i>Following <i class="fas fa-chevron-down"></i>';
+   const blockedfollowText = '<i class="large-icon fas fa-bell"></i>Blocked';
+   
+   let isSubscribed = false;
+   let swRegistration = null;
+
+   function urlB64ToUint8Array(base64String) {
+    const padding = '='.repeat((4 - base64String.length % 4) % 4);
+    const base64 = (base64String + padding)
+      .replace(/\-/g, '+')
+      .replace(/_/g, '/');
+  
+    const rawData = window.atob(base64);
+    const outputArray = new Uint8Array(rawData.length);
+  
+    for (let i = 0; i < rawData.length; ++i) {
+      outputArray[i] = rawData.charCodeAt(i);
+    }
+    return outputArray;
+  }
+   
+  function updateBtn() {
+    if (Notification.permission === 'denied') {
+      pushButton.innerHTML = blockedfollowText;
+      pushButton.disabled = true;
+      updateSubscriptionOnServer(null);
+      return;
+    }
+  
+    if (isSubscribed) {
+      pushButton.innerHTML = unfollowText;
+      pushButton.classList.remove('btn-theme-color');
+      pushButton.classList.add('btn-light-border')
+      //pushButton.disabled = true;
+    } else {
+      pushButton.innerHTML = followText;
+      pushButton.classList.add('btn-theme-color');
+      pushButton.classList.remove('btn-light-border')
+      pushButton.disabled = false;
+    }
+
+  }
+
+    function initializeUI() {
+        pushButton.addEventListener('click', function() {
+            pushButton.disabled = true;
+            if (isSubscribed) {
+                unsubscribeUser();
+            } else {
+              subscribeUser();
+            }
+          });        
+        // Set the initial subscription value
+        swRegistration.pushManager.getSubscription()
+        .then(function(subscription) {
+          isSubscribed = !(subscription === null);
+      
+          if (isSubscribed) {
+            console.log('User IS already subscribed.');
+          } else {
+            console.log('User is NOT YET subscribed.');
+          }
+      
+          updateBtn();
+        });
+    }
+
+  
+
+    function subscribeUser() {
+        const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
+        swRegistration.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey: applicationServerKey
+        })
+        .then(function(subscription) {
+          console.log('User is now subscribed');
+      
+          updateSubscriptionOnServer(subscription);
+      
+          isSubscribed = true;
+      
+          updateBtn();
+        })
+        .catch(function(err) {
+          console.log('Failed to subscribe the user: ', err);
+          updateBtn();
+        });
+      }
+
+      function unsubscribeUser() {
+        swRegistration.pushManager.getSubscription()
+        .then(function(subscription) {
+          console.log(`pushManager unsubscribe ${JSON.stringify(subscription)}`);
+          if (subscription) {
+            console.log(`pushManager unsubscribing`);
+            return subscription.unsubscribe();
+          }
+        })
+        .catch(function(error) {
+          console.log('Error unsubscribing', error);
+        })
+        .then(function() {
+          updateSubscriptionOnServer(null);
+      
+          console.log('User is unsubscribed.');
+          isSubscribed = false;
+      
+          updateBtn();
+        });
+      }      
+
+      function updateSubscriptionOnServer(subscription) {
+        // TODO: Send subscription to application server
+      
+        console.log(`updateServer sending ${JSON.stringify(subscription)}`)
+
+        fetch('https://api.threemonkeys.io/subscription/follow', {
+              method: 'POST',
+              headers: {
+                'Content-type': 'application/json'
+              },
+              body: JSON.stringify({
+                subscription: subscription
+              }),
+            });
+      }      
+
+    if ('serviceWorker' in navigator && 'PushManager' in window) {
+        console.log('Service Worker and Push is supported');
+    
+        navigator.serviceWorker.register('/sw.js')
+        .then(function(swReg) {
+        console.log('Service Worker is registered', swReg);
+    
+        swRegistration = swReg;
+        initializeUI();
+        })
+        .catch(function(error) {
+        console.error('Service Worker Error', error);
+        });
+    } else {
+        console.warn('Push messaging is not supported. Disabling follow.');
+        pushButton.disabled = false;
+        pushButton.innerHTML = blockedfollowText;
+    }    
+
 })(jQuery);
+
+
+
+
+
+
+
+

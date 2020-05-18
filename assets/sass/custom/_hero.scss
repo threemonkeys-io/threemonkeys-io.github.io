@@ -37,6 +37,16 @@ h3.main-summary {
     font-weight: 500;
     position: relative;
 
+    &.btn-theme-color:focus {
+        background-color: #0b79ff!important;
+        color: white!important;
+    }
+
+    &.btn-light-border:focus {
+        background-color: #222!important;
+        color: white!important;
+    }
+
     .large-icon {
         position: absolute;
         font-size: 25px;
@@ -50,8 +60,19 @@ h3.main-summary {
 }
 
 .follow-button:hover {
-    background-color: white;
-    color: black;
+    background-color: white!important;
+    color: black!important;
+
+    &.btn-theme-color:focus {
+        background-color: white!important;
+        color: black!important;
+    }
+
+    &.btn-light-border:focus {
+        background-color: white!important;
+        color: black!important;
+    }    
+
 
     .large-icon {
         color: black;

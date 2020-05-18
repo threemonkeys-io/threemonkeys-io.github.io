@@ -6931,6 +6931,14 @@ h3.main-summary {
     text-transform: none;
     font-weight: 500;
 }
+.follow-button.btn-theme-color:focus {
+    color: white !important; 
+    background-color: #0b79ff !important;
+}
+.follow-button.btn-light-border:focus {
+    color: white !important; 
+    background-color: #222 !important;
+}
 .follow-button .large-icon {
     position: absolute;
     position: absolute;
@@ -6943,8 +6951,16 @@ h3.main-summary {
 }
 
 .follow-button:hover {
-    color: black; 
-    background-color: white;
+    color: black !important; 
+    background-color: white !important;
+}
+.follow-button:hover.btn-theme-color:focus {
+    color: black !important; 
+    background-color: white !important;
+}
+.follow-button:hover.btn-light-border:focus {
+    color: black !important; 
+    background-color: white !important;
 }
 .follow-button:hover .large-icon {
     color: black;
