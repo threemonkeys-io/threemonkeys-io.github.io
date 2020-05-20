@@ -277,47 +277,47 @@ pre {
 }
 
 .m-top-5 {
-    margin-top: 5px;
+    margin-top: 5px !important;
 }
 
 .m-top-10 {
-    margin-top: 10px;
+    margin-top: 10px !important;
 }
 
 .m-top-15 {
-    margin-top: 15px;
+    margin-top: 15px !important;
 }
 
 .m-top-20 {
-    margin-top: 20px;
+    margin-top: 20px !important;
 }
 
 .m-top-25 {
-    margin-top: 25px;
+    margin-top: 25px !important;
 }
 
 .m-top-30 {
-    margin-top: 30px;
+    margin-top: 30px !important;
 }
 
 .m-top-35 {
-    margin-top: 35px;
+    margin-top: 35px !important;
 }
 
 .m-top-40 {
-    margin-top: 40px;
+    margin-top: 40px !important;
 }
 
 .m-top-50 {
-    margin-top: 50px;
+    margin-top: 50px !important;
 }
 
 .m-top-80 {
-    margin-top: 80px;
+    margin-top: 80px !important;
 }
 
 .m-top-100 {
-    margin-top: 100px;
+    margin-top: 100px !important;
 }
 
 /*margin bottom*/
@@ -326,19 +326,19 @@ pre {
 }
 
 .m-bot-10 {
-    margin-bottom: 10px;
+    margin-bottom: 10px !important;
 }
 
 .m-bot-15 {
-    margin-bottom: 15px;
+    margin-bottom: 15px !important;
 }
 
 .m-bot-20 {
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
 }
 
 .m-bot-25 {
-    margin-bottom: 25px;
+    margin-bottom: 25px !important;
 }
 
 .m-bot-30 {
@@ -346,11 +346,11 @@ pre {
 }
 
 .m-bot-35 {
-    margin-bottom: 35px;
+    margin-bottom: 35px !important;
 }
 
 .m-bot-40 {
-    margin-bottom: 40px;
+    margin-bottom: 40px !important;
 }
 
 .m-bot-50 {
@@ -358,11 +358,11 @@ pre {
 }
 
 .m-bot-80 {
-    margin-bottom: 80px;
+    margin-bottom: 80px !important;
 }
 
 .m-bot-100 {
-    margin-bottom: 100px;
+    margin-bottom: 100px !important;
 }
 
 .m-left-10 {
@@ -375,43 +375,43 @@ pre {
 }
 
 .p-top-10 {
-    padding-top: 10px;
+    padding-top: 10px !important;
 }
 
 .p-top-15 {
-    padding-top: 15px;
+    padding-top: 15px !important;
 }
 
 .p-top-20 {
-    padding-top: 20px;
+    padding-top: 20px !important;
 }
 
 .p-top-25 {
-    padding-top: 25px;
+    padding-top: 25px !important;
 }
 
 .p-top-30 {
-    padding-top: 30px;
+    padding-top: 30px !important;
 }
 
 .p-top-35 {
-    padding-top: 35px;
+    padding-top: 35px !important;
 }
 
 .p-top-40 {
-    padding-top: 40px;
+    padding-top: 40px !important;
 }
 
 .p-top-50 {
-    padding-top: 50px;
+    padding-top: 50px !important;
 }
 
 .p-top-80 {
-    padding-top: 80px;
+    padding-top: 80px !important;
 }
 
 .p-top-100 {
-    padding-top: 100px;
+    padding-top: 100px !important;
 }
 
 .p-tb-10 {
@@ -6899,7 +6899,7 @@ li.nav-divider {
     My Hero
 -------------------------------------------------------------------*/
 .monkey-banner {
-    height: 550px; 
+    height: 650px; 
     background-color: white;
 }
 
@@ -6952,7 +6952,7 @@ h3.main-summary {
     width: 280px;
     height: 280px;
     margin-left: -140px; 
-    border-radius: 5px;
+    border-radius: 3px;
     background-color: white;
     box-shadow: 3px 5px 8px black;
 
@@ -7129,7 +7129,7 @@ h3.main-summary {
 }
 
 .following {
-    color: #666;
+    color: #6f7273;
     font-size: 14px; 
     font-weight: 300;
 }
@@ -7199,50 +7199,55 @@ h3.main-summary {
 
 .social-icon {
     display: inline-block;
-    width: 35px;
-    height: 35px;
+    width: 38px;
+    height: 38px;
     margin: 10px 3px;
     padding: 0 !important;
     -webkit-transition: .3s;
             transition: .3s; 
     text-align: center;
-    color: #ccc;
-    border: 1px solid #666;
     border-radius: 50%;
-    background-color: #222;
-    font-size: 16px !important;
-    line-height: 33px;
+    font-size: 25px !important;
+    line-height: 38px;
 }
 .social-icon i {
     -webkit-transition: color .3s;
             transition: color .3s;
-    color: #ccc;
+    color: #6f7273;
 }
 
-.social-icon:hover {
-    background-color: #fff;
+.footer-social a i {
+    color: #6f7273;
 }
+
 .social-icon:hover i.fa-slack {
     color: #ecb22e;
 }
+
 .social-icon:hover i.fa-facebook-f {
     color: #3b5998;
 }
+
 .social-icon:hover i.fa-twitter {
     color: #00acee;
 }
+
 .social-icon:hover i.fa-instagram {
     color: #dd2a7b;
 }
+
 .social-icon:hover i.fa-linkedin-in {
     color: #0e76a8;
 }
+
 .social-icon:hover i.fa-medium-m {
-    color: black;
+    color: #666;
 }
+
 .social-icon:hover i.fa-github {
-    color: black;
+    color: #666;
 }
+
 .social-icon:hover i.fa-youtube {
     color: #c4302b;
 }
@@ -7355,7 +7360,7 @@ h3.main-summary {
             justify-content: flex-start;
 }
 .blog-text .title h2 {
-    margin: 20px 0 !important; 
+    margin: 10px 0 20px 0 !important; 
     letter-spacing: 0 !important;
     font-size: 30px;
     font-weight: 600;

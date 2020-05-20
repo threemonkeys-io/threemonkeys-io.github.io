@@ -15,23 +15,23 @@
 }
 
 .social-icon {
-    font-size: 16px!important;
+    font-size: 25px!important;
     margin: 10px 3px;
     padding: 0!important;
-    border: 1px solid #666;
-    background-color: #222;
-    width:35px;
-    height: 35px;
+    //border: 1px solid white;
+    
+    width:38px;
+    height: 38px;
     text-align: center;
     border-radius: 50%;
-    line-height: 33px;
+    line-height: 38px;
     display: inline-block;
 
-    color: #CCC;
+    
     transition: .3s;
     i {
         transition: color .3s;
-        color: #CCC;
+        color: #6f7273;
         
     }
 
@@ -39,8 +39,21 @@
     
 }
 
+.footer-social {
+    a {
+        //background-color: white;
+
+        i {
+            color: #6f7273;
+        }
+    }
+
+
+}
+
 .social-icon:hover {
-    background-color: #FFF;
+    //background-color: #FFF;
+    //border: 1px solid black;
 
     i.fa-slack {
         color: #ECB22E;
@@ -58,10 +71,10 @@
         color: #0e76a8;
     }
     i.fa-medium-m {
-        color: black;
+        color: #666;
     }
     i.fa-github {
-        color: black;
+        color: #666;
     }    
     i.fa-youtube {
         color: #c4302b;
