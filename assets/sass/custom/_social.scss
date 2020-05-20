@@ -15,17 +15,16 @@
 }
 
 .social-icon {
-    font-size: 18px!important;
-    margin-right: 5px;
-    margin-top: 10px;
+    font-size: 16px!important;
+    margin: 10px 3px;
     padding: 0!important;
     border: 1px solid #666;
     background-color: #222;
-    width: 40px;
-    height: 40px;
+    width:35px;
+    height: 35px;
     text-align: center;
     border-radius: 50%;
-    line-height: 38px;
+    line-height: 33px;
     display: inline-block;
 
     color: #CCC;
@@ -36,12 +35,7 @@
         
     }
 
-    @media screen and (max-width: 767px) {
-        width: 30px;
-        height: 30px;
-        line-height: 29px;
-        margin-top: 16px!important;
-    }
+    
     
 }
 

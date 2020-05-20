@@ -23,15 +23,15 @@
     /*==============================================
      Wow init
      ===============================================*/
-    if (typeof WOW == "function")
-        new WOW().init();
+    //if (typeof WOW == "function")
+    //    new WOW().init();
 
 
     $document.ready(function () {
 
         /*==============================================
          Retina support added
-         ===============================================*/
+         
         if (window.devicePixelRatio > 1) {
             $(".retina").imagesLoaded(function () {
                 $(".retina").each(function () {
@@ -41,7 +41,7 @@
                 });
             });
         }
-
+        ===============================================*/
 
         /*==============================================
          Smooth scroll init
@@ -108,7 +108,7 @@
                 }
             });
         }
-        initSticky();
+        //initSticky();
 
         /*==============================================
          Flex slider init
@@ -558,6 +558,7 @@
         
         const followText = '<i class="large-icon fas fa-bell"></i>FOLLOW US';
         const followingText = '<i class="large-icon fas fa-bell"></i>Following <i class="fas fa-chevron-down"></i>';
+        const followingTextOpen = '<i class="large-icon fas fa-bell"></i>Following <i class="fas fa-chevron-up"></i>';
         
         let isSubscribed = false;
         let swRegistration = null;
@@ -585,7 +586,7 @@
          if (isSubscribed) {
            pushButton.innerHTML = followingText;
            pushButton.classList.remove('btn-theme-color');
-           pushButton.classList.add('btn-light-border')
+           pushButton.classList.add('btn-dark-border')
            webNotifyCheckbox.checked = true
            pushButtonBottom.addClass('hidden');
            
@@ -593,7 +594,7 @@
          } else {
            pushButton.innerHTML = followText;
            pushButton.classList.add('btn-theme-color');
-           pushButton.classList.remove('btn-light-border')
+           pushButton.classList.remove('btn-dark-border')
            pushButtonBottom.removeClass('hidden');
            popup.classList.add('close-follow');
          }
@@ -635,8 +636,11 @@
                  if (isSubscribed) {
                      if (popup.classList.contains('close-follow')) {
                         popup.classList.remove('close-follow');
+                        pushButton.innerHTML = followingTextOpen;
+                     } else {
+                         popup.classList.add('close-follow');    
+                         pushButton.innerHTML = followingText;                
                      }
-                     else popup.classList.add('close-follow');                    
                  } else {
                    subscribeUser();
                  }

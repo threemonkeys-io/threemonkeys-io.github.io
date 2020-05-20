@@ -40,12 +40,8 @@
         .categories {
             color: white;
             a {
-                color:#e95757;
                 font-weight: 400!important;
             }
-        }
-        .author h4 {
-            color: #e95757;
         }
     
         @media screen and (max-width:767px) {
@@ -112,14 +108,14 @@
         }   
     }
     .author h4 {
-        color: #a94442;
+        color: #da1c5c;
     }
 
     .categories {
         margin-top: 5px!important;
         color: #222;
         a {
-            color: #a94442;
+            color: #da1c5c;
             font-weight: 600;
         }
     }

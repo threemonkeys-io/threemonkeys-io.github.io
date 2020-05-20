@@ -6871,6 +6871,10 @@ Table of contents
     }
 }
 
+.retina {
+    height: 40px;
+}
+
 .login-icon {
     margin: 12px 0 !important;
     -webkit-transition: .3s !important;
@@ -6895,71 +6899,68 @@ li.nav-divider {
     My Hero
 -------------------------------------------------------------------*/
 .monkey-banner {
-    background-image: url("../img/banner/three-monkeys.jpg") !important;
-    background-position: 50% 50%;
-    background-size: cover;
-}
-
-.vertical-align .container-mid {
-    position: absolute;
-    z-index: 200; 
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    height: 550px; 
+    background-color: white;
 }
 
 h1.main-heading {
+    width: 100%; 
     color: #eee;
-    text-shadow: 2px 2px 2px #000; 
     font-size: 80px;
     line-height: 70px;
 }
+h1.main-heading img {
+    max-height: 300px;
+}
 
 h3.main-summary {
-    color: #eee;
-    text-shadow: 2px 2px 2px #000; 
-    font-size: 35px;
+    color: #222;
+    font-size: 25px;
     font-weight: 400;
+    line-height: 30px;
 }
 
 .follow-button-container {
-    position: relative;
+    position: relative; 
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+            flex-direction: column;
+
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
 }
 
 .close-follow {
-    -webkit-transform: translate(-999px, 0px);
-        -ms-transform: translate(-999px, 0px);
-            transform: translate(-999px, 0px);
+    -webkit-transform: translate(-1999px, 0px);
+        -ms-transform: translate(-1999px, 0px);
+            transform: translate(-1999px, 0px);
 }
 
 .follow-button-popup-wrapper {
     position: absolute;
+    z-index: 100;
     top: 70px;
+    left: 50%;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display:         flex;
     width: 280px;
     height: 280px;
-    border-radius: 5px; 
+    margin-left: -140px; 
+    border-radius: 5px;
     background-color: white;
     box-shadow: 3px 5px 8px black;
 
-    -webkit-align-content: left;
-            align-content: left;
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
-    -webkit-box-pack: left;
     -webkit-flex-flow: column;
         -ms-flex-flow: column;
             flex-flow: column;
-    -ms-flex-line-pack: left;
-    -ms-flex-pack: left;
-    -webkit-justify-content: left;
-            justify-content: left;
 }
 
 .follow-button-popup-wrapper:focus {
@@ -7065,7 +7066,9 @@ h3.main-summary {
 }
 
 .follow-button {
-    position: relative; 
+    position: relative;
+    width: 200px; 
+    margin: 0 auto 15px auto !important;
     padding-left: 60px;
     text-transform: none;
     font-weight: 500;
@@ -7074,42 +7077,61 @@ h3.main-summary {
     color: white !important; 
     background-color: #0b79ff !important;
 }
-.follow-button.btn-light-border:focus {
+.follow-button.btn-theme-color:focus .large-icon {
+    color: white !important;
+}
+.follow-button.btn-dark-border:focus {
     color: white !important; 
     background-color: #222 !important;
+}
+.follow-button.btn-dark-border:focus .large-icon {
+    color: white !important;
 }
 
 .large-icon {
     position: absolute;
     position: absolute;
-    top: 12px; 
-    left: 20px;
+    top: 20px; 
+    left: 25px;
     -webkit-transition: .3s;
             transition: .3s;
     color: white;
     font-size: 25px;
 }
 
+.btn-dark-border .large-icon {
+    color: black !important;
+}
+
 .follow-button:hover {
-    color: black !important; 
+    color: black !important;
+    border: 1px solid black; 
     background-color: white !important;
 }
 .follow-button:hover.btn-theme-color:focus {
-    color: black !important; 
+    color: black !important;
+    border: 1px solid black; 
     background-color: white !important;
 }
-.follow-button:hover.btn-light-border:focus {
-    color: black !important; 
+.follow-button:hover.btn-theme-color:focus .large-icon {
+    color: black !important;
+}
+.follow-button:hover.btn-dark-border:focus {
+    color: black !important;
+    border: 1px solid black; 
     background-color: white !important;
+}
+.follow-button:hover.btn-dark-border:focus .large-icon {
+    color: black !important;
 }
 .follow-button:hover .large-icon {
     color: black;
 }
 
 .following {
-    color: #ccc;
+    color: #666;
     font-size: 14px; 
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .follow-button-bottom {
@@ -7120,7 +7142,7 @@ h3.main-summary {
     text-transform: none;
     opacity: .85;
     box-shadow: 4px 4px 7px #222; 
-    font-weight: 500;
+    font-weight: 600;
 }
 .follow-button-bottom.visible {
     bottom: 15px !important;
@@ -7177,10 +7199,9 @@ h3.main-summary {
 
 .social-icon {
     display: inline-block;
-    width: 40px;
-    height: 40px;
-    margin-top: 10px;
-    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    margin: 10px 3px;
     padding: 0 !important;
     -webkit-transition: .3s;
             transition: .3s; 
@@ -7189,21 +7210,13 @@ h3.main-summary {
     border: 1px solid #666;
     border-radius: 50%;
     background-color: #222;
-    font-size: 18px !important;
-    line-height: 38px;
+    font-size: 16px !important;
+    line-height: 33px;
 }
 .social-icon i {
     -webkit-transition: color .3s;
             transition: color .3s;
     color: #ccc;
-}
-@media screen and (max-width: 767px) {
-    .social-icon {
-        width: 30px;
-        height: 30px;
-        margin-top: 16px !important; 
-        line-height: 29px;
-    }
 }
 
 .social-icon:hover {
@@ -7292,11 +7305,7 @@ h3.main-summary {
     color: white;
 }
 .blog-list-item.secondary .categories a {
-    color: #e95757;
     font-weight: 400 !important;
-}
-.blog-list-item.secondary .author h4 {
-    color: #e95757;
 }
 @media screen and (max-width: 767px) {
     .blog-list-item.secondary {
@@ -7365,14 +7374,14 @@ h3.main-summary {
     font-weight: 600 !important;
 }
 .blog-text .author h4 {
-    color: #a94442;
+    color: #da1c5c;
 }
 .blog-text .categories {
     margin-top: 5px !important;
     color: #222;
 }
 .blog-text .categories a {
-    color: #a94442;
+    color: #da1c5c;
     font-weight: 600;
 }
 

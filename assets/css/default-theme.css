@@ -3,26 +3,26 @@ Default theme  Stylesheet
 -------------------------------------------------------------------*/
 ::-moz-selection {
     color: #fff;
-    background: #0b79ff;
+    background: #da1c5c;
     text-shadow: none;
 }
 ::selection {
     color: #fff;
-    background: #0b79ff;
+    background: #da1c5c;
     text-shadow: none;
 }
 
 ::-moz-selection {
     /* Firefox */
     color: #fff;
-    background: #0b79ff;
+    background: #da1c5c;
     text-shadow: none;
 }
 
 ::-webkit-selection {
     /* Safari */
     color: #fff;
-    background: #0b79ff;
+    background: #da1c5c;
     text-shadow: none;
 }
 
@@ -61,11 +61,11 @@ a,
 .cd-nav .cd-primary-nav li.selected a,
 .no-touch .cd-nav .cd-primary-nav a:hover,
 .intro-portfolio a:hover {
-    color: #0b79ff;
+    color: #da1c5c;
 }
 
 .theme-color {
-    color: #0b79ff !important;
+    color: #da1c5c !important;
 }
 
 .theme-bg,
@@ -74,31 +74,31 @@ a,
 .ei-slider-thumbs li.ei-slider-element,
 .massive-progress.progress-theme-color .progress-bar > span,
 .massive-progress.progress-theme-color .progress-bar > span:before {
-    background: #0b79ff !important;
+    background: #da1c5c !important;
 }
 
 .massive-progress.progress-theme-color .progress-bar > span:before {
-    border-color: #0b79ff;
+    border-color: #da1c5c;
 }
 
 .btn-theme-border-color,
 .widget-social-link a:hover,
 .widget-tags a:hover {
-    border: 1px solid #0b79ff;
+    border: 1px solid #da1c5c;
 }
 
 .icon-tabs .nav-pills > li > a:hover,
 .icon-tabs .nav-pills > li.active > a,
 .icon-tabs .nav-pills > li.active > a:focus,
 .icon-tabs .nav-pills > li.active > a:hover {
-    border-bottom: 1px solid #0b79ff;
+    border-bottom: 1px solid #da1c5c;
 }
 
 .btn-theme-border-color:hover,
 .price-col.feature .p-btn:hover,
 .side-social-link a:hover,
 .massive-progress.progress-theme-color .progress-bar > span:before {
-    border: 1px solid #0b79ff;
+    border: 1px solid #da1c5c;
 }
 
 .accordion.time-line > dt > a:hover:after,
@@ -126,7 +126,7 @@ a,
 .travel-form.icon-tabs .nav-pills > li.active:hover > a,
 .travel-form.icon-tabs .nav-pills > li.active > a,
 .travel-form.icon-tabs .nav-pills > li.active > a:focus {
-    background: #0b79ff;
+    background: #da1c5c;
 }
 
 .menuzord .menuzord-menu ul.dropdown li:hover > a,
@@ -137,14 +137,14 @@ a,
 @media (min-width: 768px) {
     .c-nav_s-underline.menuzord-menu > li.active > a,
     .c-nav_s-underline.menuzord-menu > li:hover > a {
-        border-bottom: 1px solid #0b79ff;
+        border-bottom: 1px solid #da1c5c;
     }
     .c-nav_s-outline.menuzord-menu > li.active > a,
     .c-nav_s-outline.menuzord-menu > li:hover > a {
-        border: 1px solid #0b79ff;
+        border: 1px solid #da1c5c;
     }
     .c-nav_s-bg.menuzord-menu > li.active > a,
     .c-nav_s-bg.menuzord-menu > li:hover > a {
-        background: #0b79ff;
+        background: #da1c5c;
     }
 }
