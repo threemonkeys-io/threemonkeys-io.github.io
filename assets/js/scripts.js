@@ -1,13 +1,13 @@
 ;(function () {
     "use strict";
 
-    var $window, $document, $body;
+    var $window, $document, $body, $api;
 
     $window = $(window);
     $document = $(document);
     $body = $("body");
-
-    
+    $api = location.hostname == 'threemonkeys.io' ? 'https://api.threemonkeys.io' : 'https://dev.threemonkeys.io';
+   
     /*==============================================
      Pre loader init
      
@@ -704,7 +704,7 @@
      
              const endpoint = isSubscribed == true ? 'unfollow' : 'follow';
      
-             fetch(`https://api.threemonkeys.io/subscription/${endpoint}`, {
+             fetch(`${$api}/subscription/${endpoint}`, {
                  method: 'POST',
                  headers: {
                      'Content-type': 'application/json'

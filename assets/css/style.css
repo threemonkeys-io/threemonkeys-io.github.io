@@ -6910,6 +6910,7 @@ h1.main-heading {
     line-height: 70px;
 }
 h1.main-heading img {
+    max-width: 500px; 
     max-height: 300px;
 }
 
@@ -7201,7 +7202,7 @@ h3.main-summary {
     display: inline-block;
     width: 38px;
     height: 38px;
-    margin: 10px 3px;
+    margin: 10px 2px;
     padding: 0 !important;
     -webkit-transition: .3s;
             transition: .3s; 
@@ -7241,11 +7242,11 @@ h3.main-summary {
 }
 
 .social-icon:hover i.fa-medium-m {
-    color: #666;
+    color: #000;
 }
 
 .social-icon:hover i.fa-github {
-    color: #666;
+    color: #000;
 }
 
 .social-icon:hover i.fa-youtube {
