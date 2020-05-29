@@ -554,13 +554,14 @@
         const popup = document.querySelector('.follow-button-popup-wrapper');
         //const socialCheckbox = document.querySelector('#social-posts');
         const webNotifyCheckbox = document.querySelector('#web-notifications');
-        const unfollowAll = document.querySelector('.unfollow');
+        //const unfollowAll = document.querySelector('.unfollow');
         
-        const followText = '<i class="large-icon fas fa-bell"></i>FOLLOW US';
+        const followText = '<i class="large-icon fas fa-bell"></i>FOLLOW';
         const followingText = '<i class="large-icon fas fa-bell"></i>Following <i class="fas fa-chevron-down"></i>';
         const followingTextOpen = '<i class="large-icon fas fa-bell"></i>Following <i class="fas fa-chevron-up"></i>';
         
         let isSubscribed = false;
+        let showPopup = false;
         let swRegistration = null;
      
         function urlB64ToUint8Array(base64String) {
@@ -589,8 +590,6 @@
            pushButton.classList.add('btn-dark-border')
            webNotifyCheckbox.checked = true
            pushButtonBottom.addClass('hidden');
-           
-           //pushButton.disabled = true;
          } else {
            pushButton.innerHTML = followText;
            pushButton.classList.add('btn-theme-color');
@@ -604,7 +603,7 @@
 
                 
        $window.on("scroll", function () {
-           if ($window.scrollTop() > 550) {
+           if ($window.scrollTop() > 450) {
                pushButtonBottom.addClass("visible");
            } else {
             pushButtonBottom.removeClass("visible");
@@ -616,7 +615,7 @@
          function initializeUI() {
              
              webNotifyCheckbox.addEventListener( 'change', function(e) {
-                e.preventDefault(); 
+                e.preventDefault();
                  if(this.checked) {
                      subscribeUser();
                  } else {
@@ -624,26 +623,49 @@
                  }
              });
      
-             unfollowAll.addEventListener("click", function(e) {
+             popup.addEventListener( 'focusout', function(e) {
                 e.preventDefault(); 
-                unsubscribeUser();
-             })
-             
-     
+                e.stopPropagation()    
+                popup.classList.add('close-follow');   
+                if(isSubscribed) {
+                    pushButton.innerHTML = followingText;     
+                } else {
+                    pushButton.innerHTML = followText;     
+                }
+                
+                showPopup = false;
+             });
+
+             popup.addEventListener( 'focusin', function(e) {
+                e.preventDefault(); 
+                e.stopPropagation()
+             });
+
+
+             pushButton.addEventListener( 'mousedown', function(e) {
+                e.preventDefault(); 
+                e.stopPropagation()                
+             });
+
              pushButton.addEventListener('click', function(e) {
-                 e.preventDefault();
-                 
+                e.stopPropagation() 
+                e.preventDefault();
                  if (isSubscribed) {
-                     if (popup.classList.contains('close-follow')) {
+                    if (!showPopup) {
+                        showPopup = true;
                         popup.classList.remove('close-follow');
-                        pushButton.innerHTML = followingTextOpen;
-                     } else {
-                         popup.classList.add('close-follow');    
-                         pushButton.innerHTML = followingText;                
-                     }
+                        pushButton.innerHTML = followingTextOpen;                             
+                        popup.focus(); 
+                    } else {
+                        showPopup = false;
+                        popup.blur(); 
+                        popup.classList.add('close-follow');   
+                        pushButton.innerHTML = followingText;                             
+                    }
                  } else {
                    subscribeUser();
                  }
+                 
                });   
                
                pushButtonBottom.click(function(e) {
@@ -669,7 +691,6 @@
                applicationServerKey: applicationServerKey
              })
              .then(function(subscription) {
-               console.log('User is now subscribed');
            
                updateSubscriptionOnServer(subscription);
            
@@ -678,7 +699,6 @@
                updateBtn();
              })
              .catch(function(err) {
-               console.error('Failed to subscribe the user: ', err);
                updateBtn();
              });
            }
@@ -690,7 +710,7 @@
                  updateSubscriptionOnServer(subscription);
                  subscription.unsubscribe();
                }
-               console.log('User is unsubscribed.');
+               console.log('You are unsubscribed.');
                isSubscribed = false;
                updateBtn();
              })

@@ -1,7 +1,10 @@
 .blog-classic {
     margin-bottom: 70px;
     padding-bottom: 70px;
-    border-bottom: 1px solid #efefef;
+    font-size: 20px;
+    margin: 0 0 30px;
+    line-height: 30px;
+    color: #333;
 }
 
 .blog-classic .date {
@@ -66,24 +69,25 @@
 }
 
 .blog-post blockquote {
-    padding: 0;
-    margin: 0 0 20px;
-    font-size: 17.5px;
+    font-size: 28px;
+    line-height: 38px;
+    padding: 0 30px;
     border-left: none;
-    font-style: italic;
+    font-style: italic;  
+    color: #999;
 }
 
 .quote-post p:before {
     content: "\f10d";
     padding-right: 10px;
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 5 Pro';
     color: #837f7e;
 }
 
 .quote-post p:after {
     content: "\f10e";
     padding-left: 10px;
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 5 Pro';
     color: #837f7e;
 }
 
@@ -236,13 +240,13 @@
 .widget-category li a:before {
     content: "\f105";
     padding-right: 10px;
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 5 Pro';
 }
 
 .widget-comments li:before {
     content: "\f0e6";
     padding-right: 10px;
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 5 Pro';
     color: #837f7e;
 }
 
