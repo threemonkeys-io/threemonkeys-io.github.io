@@ -6886,7 +6886,6 @@ li.nav-divider {
     My Hero
 -------------------------------------------------------------------*/
 .monkey-banner {
-    height: 680px; 
     background-color: white;
 }
 
@@ -7328,7 +7327,6 @@ h3.main-summary {
 .blog-image {
     overflow: hidden;
     width: 100%; 
-    min-height: 360px;
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -7547,6 +7545,11 @@ h3.main-summary {
     color: #222;
     font-size: 14px !important;
     font-weight: 600;
+}
+.blog-content .title {
+    display: block; 
+    margin-right: 15px;
+    margin-left: 15px;
 }
 .blog-content .follow-wrapper {
     position: relative;
