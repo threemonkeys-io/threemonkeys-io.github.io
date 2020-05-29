@@ -203,10 +203,6 @@ pre {
     background: transparent;
 }
 
-.container-custom {
-    margin: 0 15px;
-}
-
 /*==============================================
   Utility
   ===============================================*/
@@ -619,8 +615,8 @@ pre {
 .col-md-12,
 .col-sm-12,
 .col-xs-12 {
-    padding-right: 30px; 
-    padding-left: 30px;
+    padding-right: 15px; 
+    padding-left: 15px;
 }
 
 .btn-default {
