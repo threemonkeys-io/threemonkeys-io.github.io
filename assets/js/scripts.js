@@ -552,15 +552,15 @@
         const pushButton = document.querySelector('.follow-button');
         const pushButtonBottom = $(".follow-button-bottom");
         const popup = document.querySelector('.follow-button-popup-wrapper');
-        //const socialCheckbox = document.querySelector('#social-posts');
-        const webNotifyCheckbox = document.querySelector('#web-notifications');
-        //const unfollowAll = document.querySelector('.unfollow');
-        
-        const followText = '<i class="large-icon fas fa-bell"></i>FOLLOW';
+        const popupDialog = document.querySelector('.follow-button-popup');
+        const closeDialog = document.querySelector('.close-icon');
+
+        const webNotifyCheckbox = document.querySelector('#web-notifications');        
+        const followText = '<i class="large-icon fas fa-bell"></i>FOLLOW <i class="fas fa-chevron-down"></i>';
         const followingText = '<i class="large-icon fas fa-bell"></i>Following <i class="fas fa-chevron-down"></i>';
-        const followingTextOpen = '<i class="large-icon fas fa-bell"></i>Following <i class="fas fa-chevron-up"></i>';
         
         let isSubscribed = false;
+        let webNotifyDisabled = false;
         let showPopup = false;
         let swRegistration = null;
      
@@ -579,7 +579,7 @@
          return outputArray;
        }
         
-       function updateBtn() {
+       function updateUI() {
          if (Notification.permission === 'denied') {
              webNotifyCheckbox.disabled = true;
          }
@@ -596,6 +596,12 @@
            pushButton.classList.remove('btn-dark-border')
            pushButtonBottom.removeClass('hidden');
            popup.classList.add('close-follow');
+         }
+
+         if (showPopup) {
+            popup.classList.remove('close-follow');   
+         } else {
+            popup.classList.add('close-follow');
          }
      
        }
@@ -614,28 +620,36 @@
      
          function initializeUI() {
              
+             // Set the initial subscription value
+             
+             if (swRegistration) {
+                swRegistration.pushManager.getSubscription()
+                .then(function(subscription) {
+                  isSubscribed = !(subscription === null);
+                  updateUI();
+                });
+             }
+
              webNotifyCheckbox.addEventListener( 'change', function(e) {
                 e.preventDefault();
+                e.stopPropagation();
                  if(this.checked) {
                      subscribeUser();
                  } else {
                      unsubscribeUser();
                  }
              });
-     
-             popup.addEventListener( 'focusout', function(e) {
-                e.preventDefault(); 
-                e.stopPropagation()    
-                popup.classList.add('close-follow');   
-                if(isSubscribed) {
-                    pushButton.innerHTML = followingText;     
-                } else {
-                    pushButton.innerHTML = followText;     
-                }
-                
-                showPopup = false;
-             });
 
+     
+
+            closeDialog.addEventListener( 'click', function(e) {
+                e.preventDefault(); 
+                e.stopPropagation();
+                showPopup = false;
+                updateUI();
+            });                        
+
+             /*
              popup.addEventListener( 'focusin', function(e) {
                 e.preventDefault(); 
                 e.stopPropagation()
@@ -646,40 +660,32 @@
                 e.preventDefault(); 
                 e.stopPropagation()                
              });
+             */
 
              pushButton.addEventListener('click', function(e) {
                 e.stopPropagation() 
                 e.preventDefault();
-                 if (isSubscribed) {
-                    if (!showPopup) {
-                        showPopup = true;
-                        popup.classList.remove('close-follow');
-                        pushButton.innerHTML = followingTextOpen;                             
-                        popup.focus(); 
-                    } else {
-                        showPopup = false;
-                        popup.blur(); 
-                        popup.classList.add('close-follow');   
-                        pushButton.innerHTML = followingText;                             
-                    }
+                 if (isSubscribed || webNotifyDisabled) {
+                    showPopup = true;
+                    updateUI();
                  } else {
                    subscribeUser();
                  }
-                 
                });   
                
-               pushButtonBottom.click(function(e) {
-                 e.preventDefault();
-                 subscribeUser();
-               }); 
-               popup.classList.add('close-follow');                           
-             // Set the initial subscription value
-             swRegistration.pushManager.getSubscription()
-             .then(function(subscription) {
-               isSubscribed = !(subscription === null);
-         
-               updateBtn();
-             });
+            pushButtonBottom.click(function(e) {
+                e.preventDefault();
+                if (webNotifyDisabled) {
+                    showPopup = true;
+                    updateUI()
+                } else {
+                    subscribeUser();
+                }
+            });
+               
+               
+            updateUI();
+
          }
      
        
@@ -696,10 +702,10 @@
            
                isSubscribed = true;
            
-               updateBtn();
+                updateUI();
              })
              .catch(function(err) {
-               updateBtn();
+                updateUI();
              });
            }
      
@@ -712,7 +718,7 @@
                }
                console.log('You are unsubscribed.');
                isSubscribed = false;
-               updateBtn();
+               updateUI();
              })
              .catch(function(error) {
                  console.error('Error unsubscribing', error);
@@ -743,12 +749,15 @@
                  initializeUI();
              })
              .catch(function(error) {
-             console.error('Service Worker Error', error);
-             webNotifyCheckbox.disabled = true;
+                console.error('Service Worker Error', error);
+                webNotifyCheckbox.disabled = true;
+                webNotifyDisabled = true;
              });
          } else {
              console.warn('Push messaging is not supported.');
              webNotifyCheckbox.disabled = true;
+             webNotifyDisabled = true;
+             initializeUI();
          }    
 
 

@@ -81,7 +81,7 @@
 
                             <div class="author">
                                 <div class="avatar">
-                                    <img src="/assets/img/profiles/jordan-rancie-avatar.jpg" width="48" height="48" alt="Jordan Rancie" />
+                                    <div title="Jordan Rancie" style="background-image: url(/assets/img/profiles/jordan-rancie.jpg);"></div>
                                 </div>
                                 <div class="details">
                                     <h4>Jordan Rancie</h4>
@@ -94,59 +94,23 @@
                                     <a href="" class="follow-button btn btn-rounded btn-small btn-theme-color">
                                         <i class="large-icon fas fa-bell"></i>FOLLOW
                                     </a>
-                                    <div tabindex="-1" class="follow-button-popup-wrapper text-left  close-follow">
-                                        <div class="follow-button-popup">
-                                            <span class="inline-heading">You're following us.</span>
-
-                                            <label class="check-container m-top-10">Web notifications
-                                                <input type="checkbox" id="web-notifications">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                            <span class="inline-heading p-top-30">Other ways to follow us.</span>
-                                            <div class="check-container no-check">
-                                                <a class="g-ytsubscribe" data-channelid="UCgRkYBy32tiKN5irU-zLKTA"
-                                                    data-layout="default" data-theme="dark" data-count="hidden"></a>
-                                            </div>
-
-                                            <div class="check-container no-check">
-                                                <a href="https://twitter.com/3__Monkeys?ref_src=twsrc%5Etfw"
-                                                    class="twitter-follow-button" data-show-count="false">Follow
-                                                    @3__Monkeys</a>
-                                            </div>
-                                            <div class="check-container no-check">
-                                                <div class="fb-like"
-                                                    data-href="https://www.facebook.com/Three-Monkeys-102470121479832"
-                                                    data-width="150" data-layout="button" data-action="recommend"
-                                                    data-size="large" data-share="false"></div>
-                                                
-                                            </div>
-                                            <div class="check-container no-check">
-                                                <script defer src="https://platform.linkedin.com/in.js">
-                                                    lang: en_US
-                                                </script>
-                                                <script type="IN/FollowCompany" data-id="37233813" data-counter="none"></script>
-
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
 
                                 <div class="links-to-share">
                                     <span>SHARE</span>
                                         <a  title="Share of LinkedIn"
-                                            onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
                                             target="_blank" 
+                                            rel="noopener nofollow"
                                             href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fthreemonkeys.io%2Fletter%2Fintroduction.html&title=Let%20me%20introduce%20The%20Three%20Monkeys&summary=A%20blog%20about%20our%20economy,%20our%20money%20and%20our%20planet&source=The%20Three%20Monkeys" class="share-icon"><i
                                             class="fab fa-linkedin-in"></i></a>
                                         <a  title="Share of Twitter"
-                                            onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
                                             target="_blank" 
+                                            rel="noopener nofollow"
                                             href="https://twitter.com/intent/tweet?text=Check%20out%20The%20Three%20Monkeys%20https%3A%2F%2Fthreemonkeys.io%2Fletter%2Fintroduction.html%20by%20Jordan%20Rancie%20%403__Monkeys" class="share-icon"><i
                                             class="fab fa-twitter"></i></a>
                                         <a  title="Share of Facebook"
-                                            onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=800,width=620');return false;"
                                             target="_blank" 
+                                            rel="noopener nofollow"
                                             href="https://www.facebook.com/v3.3/dialog/share?app_id=249498246163576&href=https://threemonkeys.io/letter/introduction.html&display=page&redirect_uri=https://threemonkeys.io/letter/introduction.html"
                                             class="share-icon"><i class="fab fa-facebook-f"></i></a>
                                 </div>
@@ -261,10 +225,50 @@
 
 
 
-    <!-- Follow button -->
-    <a href="" class="follow-button-bottom btn btn-rounded btn-small btn-theme-color">
-        <i class="small-icon fas fa-bell"></i>FOLLOW
-    </a>
+    <!-- Follow -->
+    <div tabindex="-1" class="follow-button-popup-wrapper text-left close-follow">
+            <div class="follow-button-popup">
+                <a href="#" class="close-icon" title="Close follow popup"><i class="fas fa-times"></i></a>
+                <span class="inline-heading  p-top-0">Follow us through these channels:</span>
+    
+                <label class="check-container m-top-10">Web notifications
+                    <input type="checkbox" id="web-notifications">
+                    <span class="checkmark"></span>
+                </label>
+    
+                <div class="check-container no-check">
+                    <a class="g-ytsubscribe" data-channelid="UCgRkYBy32tiKN5irU-zLKTA"
+                        data-layout="default" data-theme="dark" data-count="hidden"></a>
+                </div>
+    
+                <div class="check-container no-check">
+                    <a href="https://twitter.com/3__Monkeys?ref_src=twsrc%5Etfw"
+                        class="twitter-follow-button" data-show-count="false">Follow
+                        @3__Monkeys</a>
+                </div>
+                <div class="check-container no-check">
+                    <div class="fb-like"
+                        data-href="https://www.facebook.com/Three-Monkeys-102470121479832"
+                        data-width="150" data-layout="button" data-action="recommend"
+                        data-size="large" data-share="false"></div>
+                    
+                </div>
+                <div class="check-container no-check">
+                    <script defer src="https://platform.linkedin.com/in.js"
+                        type="text/javascript">
+                        lang: en_US
+                    </script>
+                    <script type="IN/FollowCompany" data-id="37233813" data-counter="none">
+                    </script>
+                    
+                </div>
+            </div>
+        </div>
+    
+        
+        <a href="" class="follow-button-bottom btn btn-rounded btn-small btn-theme-color">
+            <i class="small-icon fas fa-bell"></i>FOLLOW
+        </a>
 
 
 
