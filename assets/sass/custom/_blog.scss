@@ -125,7 +125,6 @@
 
 .blog-image {
     flex: 2;
-    background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: 10%;
@@ -142,6 +141,8 @@
 .norepeat {
     background-repeat: no-repeat;
     background-position-x: center;
+    background-position-y: bottom;
+    background-size: contain;
 }
 
 .blog-text {

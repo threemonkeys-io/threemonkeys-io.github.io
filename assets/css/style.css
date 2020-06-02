@@ -7364,7 +7364,6 @@ h3.main-summary {
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: 10%;
-    background-size: cover;
 
     -webkit-box-flex: 2;
     -webkit-flex: 2;
@@ -7379,6 +7378,8 @@ h3.main-summary {
 .norepeat {
     background-repeat: no-repeat;
     background-position-x: center;
+    background-position-y: bottom;
+    background-size: contain;
 }
 
 .blog-text {
