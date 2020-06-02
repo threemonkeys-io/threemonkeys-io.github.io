@@ -356,6 +356,12 @@
     flex: 1;
 }
 
+.links-wrapper-bottom {
+    display: flex;
+    width: 100%;
+    flex: 1;
+}
+
 .links-to-share {
     display: flex;
     margin-left: auto;
@@ -363,6 +369,7 @@
     border-radius: 3px;
     border: 1px solid #da1c5c;
     color: #da1c5c;
+    align-items: center;
 
     &:last-child {
         padding-right: 10px;

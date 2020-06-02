@@ -7598,6 +7598,19 @@ h3.main-summary {
             flex: 1;
 }
 
+.links-wrapper-bottom {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    width: 100%;
+
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+}
+
 .links-to-share {
     display: -webkit-box;
     display: -webkit-flex;
@@ -7605,9 +7618,14 @@ h3.main-summary {
     display:         flex;
     margin-right: 0;
     margin-left: auto;
-    color: #da1c5c; 
+    color: #da1c5c;
     border: 1px solid #da1c5c;
     border-radius: 3px;
+
+    -webkit-align-items: center;
+            align-items: center; 
+    -webkit-box-align: center;
+    -ms-flex-align: center;
 }
 .links-to-share:last-child {
     padding-right: 10px;
