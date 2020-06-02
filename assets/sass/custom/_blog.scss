@@ -138,11 +138,13 @@
 
 }
 
-.norepeat {
+.blog-feature-image {
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: bottom;
-    background-size: contain;
+    background-size: auto 360px;
+    height: 360px;
+    width: 100%;
 }
 
 .blog-text {
