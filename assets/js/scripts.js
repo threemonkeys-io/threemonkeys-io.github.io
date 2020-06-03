@@ -559,10 +559,10 @@
         const followText = '<i class="large-icon fas fa-bell"></i>FOLLOW <i class="fas fa-chevron-down"></i>';
         const followingText = '<i class="large-icon fas fa-bell"></i>Following <i class="fas fa-chevron-down"></i>';
         
-        let isSubscribed = false;
-        let webNotifyDisabled = false;
-        let showPopup = false;
-        let swRegistration = null;
+        var isSubscribed = false;
+        var webNotifyDisabled = false;
+        var showPopup = false;
+        var swRegistration = null;
      
         function urlB64ToUint8Array(base64String) {
          const padding = '='.repeat((4 - base64String.length % 4) % 4);
@@ -573,7 +573,7 @@
          const rawData = window.atob(base64);
          const outputArray = new Uint8Array(rawData.length);
        
-         for (let i = 0; i < rawData.length; ++i) {
+         for (var i = 0; i < rawData.length; ++i) {
            outputArray[i] = rawData.charCodeAt(i);
          }
          return outputArray;
@@ -730,7 +730,7 @@
      
              const endpoint = isSubscribed == true ? 'unfollow' : 'follow';
      
-             fetch(`${$api}/subscription/${endpoint}`, {
+             fetch($api + '/subscription/' + endpoint, {
                  method: 'POST',
                  headers: {
                      'Content-type': 'application/json'

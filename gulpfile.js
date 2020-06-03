@@ -144,6 +144,7 @@ gulp.task("script", function() {
     return gulp.src("./assets/js/scripts.js")
         .pipe(plumberNotifier())
         .pipe(uglify())
+        .on('error', function (err) {console.log(err)})
         .pipe(rename({suffix:".min"}))
         .pipe(gulp.dest("./assets/js/"));
 
